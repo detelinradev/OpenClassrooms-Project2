@@ -42,6 +42,10 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+
+		} else {
+
+			return Collections.emptyList();
 		}
 
 		return result;
