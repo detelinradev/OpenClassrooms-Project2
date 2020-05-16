@@ -3,6 +3,7 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -30,9 +31,13 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			try (BufferedReader reader = new BufferedReader(new java.io.FileReader(filepath));) {
 				String line = reader.readLine();
 
-				while (line != null) {
-					result.add(line);
-					line = reader.readLine();
+				if (line != null) {
+					while (line != null) {
+						result.add(line);
+						line = reader.readLine();
+					}
+				} else {
+					return Collections.emptyList();
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
