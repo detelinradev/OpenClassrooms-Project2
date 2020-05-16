@@ -1,20 +1,33 @@
 package com.hemebiotech.analytics;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
- * Anything that will read symptom data from a source
- * The important part is, the return value from the operation, which is a list of strings,
- * that may contain many duplications
+ * <h1>SymptomReaderFromSource</h1> The SymptomReaderFromSource interface is
+ * used as a bridge between the types of getting data classes that all
+ * implements the interface and the actual class that is used to represent the
+ * source data at runtime to the user. This is implementation of the Design
+ * Pattern, where an instantiable class should be used to represent the
+ * interface containing the method that groups several classes implementing the
+ * interface and the method with different implementations.
+ * <p>
+ * It contains just one method for acquiring the data from the source.
  * 
- * The implementation does not need to order the list
- * 
+ * @author Detelin Radev
+ * @version 1.0
+ *
  */
 public interface ISymptomReader {
+
 	/**
-	 * If no data is available, return an empty List
+	 * The method reads data from various locations depends of the class
+	 * implementing it, and write it in a list.
 	 * 
-	 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
+	 * @return List<String> with all the symptoms from the file.It may return empty
+	 *         list on some conditions
+	 * @exception IOException On input error
+	 * @see IOException
 	 */
-	List<String> GetSymptoms ();
+	List<String> GetSymptoms();
 }
