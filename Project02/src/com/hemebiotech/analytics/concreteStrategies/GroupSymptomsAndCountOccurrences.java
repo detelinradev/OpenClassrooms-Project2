@@ -40,33 +40,57 @@ public class GroupSymptomsAndCountOccurrences implements IDataAnalysis {
 	 * Then it writes the output to a file and returns it as a result.
 	 * 
 	 * @return File with all the symptoms from the List grouped by the number of
-	 *         occurrences and alphabetically ordered.
+	 *         occurrences and alphabetically ordered. If the List is empty or null,
+	 *         method returns File with single record "No data proceeded".
 	 * @exception IOException On input error
 	 * @see IOException
 	 */
 	@Override
 	public File proceedData() {
+
 		Map<String, Integer> result = new TreeMap<>();
-		for (String symptom : source) {
-			if (result.containsKey(symptom)) {
-				result.put(symptom, result.get(symptom) + 1);
-			} else {
-				result.put(symptom, 1);
+
+		if (source != null && !source.isEmpty()) {
+
+			for (String symptom : source) {
+
+				if (result.containsKey(symptom)) {
+
+					result.put(symptom, result.get(symptom) + 1);
+
+				} else {
+
+					result.put(symptom, 1);
+				}
 			}
 		}
+
 		return writeOutputToFile(result);
 	}
 
 	private File writeOutputToFile(Map<String, Integer> result) {
+
 		File output = new File("proceededData");
+
 		try (FileWriter writer = new FileWriter(output)) {
 
-			for (String symptom : result.keySet()) {
-				writer.write(symptom + " : " + result.get(symptom) + "\n");
+			if (!result.isEmpty()) {
+
+				for (String symptom : result.keySet()) {
+
+					writer.write(symptom + " : " + result.get(symptom) + "\n");
+				}
+
+			} else {
+
+				writer.write("No data proceeded");
 			}
+
 		} catch (IOException e) {
+
 			e.printStackTrace();
 		}
+
 		return output;
 	}
 
