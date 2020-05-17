@@ -46,7 +46,7 @@ public class DataAnalysis {
 	 * @return File returns a File with analyzed data
 	 */
 	public File analyze(List<String> rawData) {
-		return data.proceedData(rawData);
+		return data.proceedData();
 	}
 
 }

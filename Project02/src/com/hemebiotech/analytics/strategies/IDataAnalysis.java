@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics.strategies;
 
 import java.io.File;
-import java.util.List;
 
 /**
  * <h1>IDataAnalysis</h1> The IDataAnalysis interface is used as a bridge
@@ -23,9 +22,8 @@ public interface IDataAnalysis {
 	 * The method analyze the data in various ways depends of the class implementing
 	 * it and writes the result in a file.
 	 * 
-	 * @param data - a List with raw listing of the content of the source file
 	 * @return file - file with analyzed data
 	 */
-	File proceedData(List<String> data);
+	File proceedData();
 
 }
