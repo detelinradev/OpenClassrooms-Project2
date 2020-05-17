@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * <h1>SymptomReader</h1> The SymptomReader class is the actual class that is
  * used to represent the source data at runtime to the user. This is
- * implementation of the Design Pattern, where an instantiable class should be
+ * implementation of the Strategy Pattern, where an instantiable class should be
  * used to represent the interface containing the method that groups several
  * classes implementing the interface and the method with different
  * implementations.

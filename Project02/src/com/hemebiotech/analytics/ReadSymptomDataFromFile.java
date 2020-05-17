@@ -40,7 +40,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * @see IOException
 	 */
 	@Override
-	public List<String> GetSymptoms() {
+	public List<String> getSymptoms() {
 
 		ArrayList<String> symptoms = new ArrayList<String>();
 

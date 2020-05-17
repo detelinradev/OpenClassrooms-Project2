@@ -7,7 +7,7 @@ import java.util.List;
  * <h1>SymptomReaderFromSource</h1> The SymptomReaderFromSource interface is
  * used as a bridge between the types of getting data classes that all
  * implements the interface and the actual class that is used to represent the
- * source data at runtime to the user. This is implementation of the Design
+ * source data at runtime to the user. This is implementation of the Strategy
  * Pattern, where an instantiable class should be used to represent the
  * interface containing the method that groups several classes implementing the
  * interface and the method with different implementations.
