@@ -29,5 +29,5 @@ public interface ISymptomReader {
 	 * @exception IOException On input error
 	 * @see IOException
 	 */
-	List<String> GetSymptoms();
+	List<String> getSymptoms();
 }
