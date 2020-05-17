@@ -6,8 +6,10 @@ import java.util.List;
 
 import com.hemebiotech.analytics.concreteStrategies.GroupSymptomsAndCountOccurrences;
 import com.hemebiotech.analytics.concreteStrategies.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.concreteStrategies.WriteOutputToFile;
 import com.hemebiotech.analytics.contexts.DataAnalysis;
 import com.hemebiotech.analytics.contexts.SymptomReader;
+import com.hemebiotech.analytics.contexts.WriteOutput;
 
 /**
  * <h1>AnalyticsCounter</h1> The AnalyticsCounter program implements an
@@ -35,6 +37,8 @@ public class AnalyticsCounter {
 		DataAnalysis analysisTool = new DataAnalysis(new GroupSymptomsAndCountOccurrences(data));
 
 		File result = analysisTool.analyze();
+
+		WriteOutput writeTool = new WriteOutput(new WriteOutputToFile(result));
 
 	}
 }
