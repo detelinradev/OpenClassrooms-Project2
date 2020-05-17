@@ -1,6 +1,8 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.contexts;
 
 import java.util.List;
+
+import com.hemebiotech.analytics.strategies.ISymptomReader;
 
 /**
  * <h1>SymptomReader</h1> The SymptomReader class is the actual class that is

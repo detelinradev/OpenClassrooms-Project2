@@ -3,6 +3,9 @@ package com.hemebiotech.analytics;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hemebiotech.analytics.concreteStrategies.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.contexts.SymptomReader;
+
 /**
  * <h1>AnalyticsCounter</h1> The AnalyticsCounter program implements an
  * application that reads symptoms from a file, one symptom per line, and write

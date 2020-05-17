@@ -1,10 +1,12 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.concreteStrategies;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import com.hemebiotech.analytics.strategies.ISymptomReader;
 
 /**
  * <h1>ReadSymptomDataFromFile</h1> The class ReadSymptomDataFromFile is the
