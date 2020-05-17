@@ -70,7 +70,7 @@ public class GroupSymptomsAndCountOccurrences implements IDataAnalysis {
 
 	private File writeOutputToFile(Map<String, Integer> result) {
 
-		File output = new File("proceededData");
+		File output = new File("proceededData.txt");
 
 		try (FileWriter writer = new FileWriter(output)) {
 

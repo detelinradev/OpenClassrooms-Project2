@@ -4,7 +4,6 @@
 package com.hemebiotech.analytics.contexts;
 
 import java.io.File;
-import java.util.List;
 
 import com.hemebiotech.analytics.strategies.IDataAnalysis;
 
@@ -42,10 +41,9 @@ public class DataAnalysis {
 	 * This method make use of the proceedData method of IDataAnalysis and returns a
 	 * File with the result.
 	 * 
-	 * @param rawData receives a List with raw data
 	 * @return File returns a File with analyzed data
 	 */
-	public File analyze(List<String> rawData) {
+	public File analyze() {
 		return data.proceedData();
 	}
 

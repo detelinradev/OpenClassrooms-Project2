@@ -1,9 +1,12 @@
 package com.hemebiotech.analytics;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hemebiotech.analytics.concreteStrategies.GroupSymptomsAndCountOccurrences;
 import com.hemebiotech.analytics.concreteStrategies.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.contexts.DataAnalysis;
 import com.hemebiotech.analytics.contexts.SymptomReader;
 
 /**
@@ -28,6 +31,10 @@ public class AnalyticsCounter {
 		SymptomReader reader = new SymptomReader(new ReadSymptomDataFromFile("symptoms.txt"));
 
 		List<String> data = new ArrayList<>(reader.getData());
+
+		DataAnalysis analysisTool = new DataAnalysis(new GroupSymptomsAndCountOccurrences(data));
+
+		File result = analysisTool.analyze();
 
 	}
 }
