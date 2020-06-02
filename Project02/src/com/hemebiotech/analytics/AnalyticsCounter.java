@@ -1,8 +1,9 @@
 package com.hemebiotech.analytics;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import com.hemebiotech.analytics.concreteStrategies.GroupSymptomsAndCountOccurrences;
 import com.hemebiotech.analytics.concreteStrategies.ReadSymptomDataFromFile;
@@ -50,7 +51,7 @@ public class AnalyticsCounter {
 
 		DataAnalysis analysisTool = new DataAnalysis(new GroupSymptomsAndCountOccurrences(data));
 
-		File result = analysisTool.analyze();
+		Map<String, Integer> result = new TreeMap<>(analysisTool.analyze());
 
 		WriteOutput writeTool = new WriteOutput(new WriteOutputToFile(result));
 

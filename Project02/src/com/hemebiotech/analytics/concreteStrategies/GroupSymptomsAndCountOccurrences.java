@@ -37,16 +37,16 @@ public class GroupSymptomsAndCountOccurrences implements IDataAnalysis {
 	/**
 	 * The method reads the raw data from a List and write it in a tree map data
 	 * structure with the symptom as a key and the number of occurrences as a value.
-	 * Then it writes the output to a file and returns it as a result.
+	 * Then it returns it as a result.
 	 * 
-	 * @return File with all the symptoms from the List grouped by the number of
+	 * @return TreeMap with all the symptoms from the List grouped by the number of
 	 *         occurrences and alphabetically ordered. If the List is empty or null,
-	 *         method returns File with single record "No data proceeded".
+	 *         method returns TreeMap with single record "No data proceeded".
 	 * @exception IOException On input error
 	 * @see IOException
 	 */
 	@Override
-	public File proceedData() {
+	public Map<String, Integer> proceedData() {
 
 		Map<String, Integer> result = new TreeMap<>();
 
@@ -66,7 +66,7 @@ public class GroupSymptomsAndCountOccurrences implements IDataAnalysis {
 			System.out.println("Analytics application analyzed the data.");
 		}
 
-		return writeOutputToFile(result);
+		return result;
 	}
 
 	private File writeOutputToFile(Map<String, Integer> result) {

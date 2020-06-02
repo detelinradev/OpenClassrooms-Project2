@@ -3,7 +3,7 @@
  */
 package com.hemebiotech.analytics.contexts;
 
-import java.io.File;
+import java.util.Map;
 
 import com.hemebiotech.analytics.strategies.IDataAnalysis;
 
@@ -43,7 +43,7 @@ public class DataAnalysis {
 	 * 
 	 * @return File returns a File with analyzed data
 	 */
-	public File analyze() {
+	public Map<String, Integer> analyze() {
 		return data.proceedData();
 	}
 

@@ -7,7 +7,7 @@ import com.hemebiotech.analytics.strategies.IWriteOutput;
  * <h1>WriteOutput</h1> The WriteOutput class is the actual class that is used
  * to receive the processed data at runtime from the WriteOutputToDestination
  * object and write it as an output for the user. This is implementation of the
- * Design Pattern, where an instantiable class should be used to represent the
+ * Design Pattern, where an concrete class should be used to represent the
  * interface containing the method that groups several classes implementing the
  * interface and the method with different implementations.
  * <p>

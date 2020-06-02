@@ -1,9 +1,9 @@
 package com.hemebiotech.analytics.concreteStrategies;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Map;
 
 import com.hemebiotech.analytics.strategies.IWriteOutput;
 
@@ -19,21 +19,21 @@ import com.hemebiotech.analytics.strategies.IWriteOutput;
  */
 public class WriteOutputToFile implements IWriteOutput {
 
-	private File input;
+	private Map<String, Integer> input;
 
 	/**
-	 * This constructor stores a File
+	 * This constructor stores a Map
 	 * 
-	 * @param input a File have to be provided for constructing the object
+	 * @param input a Map have to be provided for constructing the object
 	 */
-	public WriteOutputToFile(File input) {
+	public WriteOutputToFile(Map<String, Integer> input) {
 		this.input = input;
 	}
 
 	/**
-	 * This method reads the data from the file that holds the result and writes it
-	 * to a file in the output destination. If the file is empty or contains: No
-	 * data proceeded, method returns a File with single record "No data proceeded".
+	 * This method reads the data from the Map that holds the result and writes it
+	 * to a file in the output destination. If the Map is empty method returns a
+	 * File with single record "No data proceeded".
 	 * 
 	 * @exception IOException On output error
 	 * @see IOException
@@ -41,25 +41,23 @@ public class WriteOutputToFile implements IWriteOutput {
 	@Override
 	public void write() {
 
-		File output = new File("result.out");
+		File result = new File("result.out");
 
-		try (BufferedReader reader = new BufferedReader(new java.io.FileReader(input));
-				FileWriter writer = new FileWriter(output)) {
+		try (FileWriter writer = new FileWriter(result)) {
 
-			String line = reader.readLine(); // get first symptom
+			if (!input.isEmpty()) {
 
-			if (!line.equals("No data proceeded") && line != null) {
+				for (String symptom : input.keySet()) {
 
-				while (line != null) {
-
-					writer.write(line + "\n");
-					line = reader.readLine(); // get next symptom
+					writer.write(symptom + " : " + input.get(symptom) + "\n");
 				}
 				System.out.println("Analytics application wrote the proceeded data to a file.");
 
 			} else {
 
-				writer.write("No data proceeded"); // in case input file is empty or has no data
+				writer.write("No data proceeded");
+
+				System.out.println("No data proceeded");
 			}
 
 		} catch (IOException e) {

@@ -1,15 +1,15 @@
 package com.hemebiotech.analytics.strategies;
 
-import java.io.File;
+import java.util.Map;
 
 /**
  * <h1>IDataAnalysis</h1> The IDataAnalysis interface is used as a bridge
  * between the types of proceeding data classes, that all implements this
  * interface, and the actual class that is used to represent the proceeded data
- * to the user.This is implementation of the Strategy Pattern, where an
- * instantiable class should be used to represent the interface containing the
- * method that groups several classes implementing the interface and the method
- * with different implementations.
+ * to the user.This is implementation of the Strategy Pattern, where an concrete
+ * class should be used to represent the interface containing the method that
+ * groups several classes implementing the interface and the method with
+ * different implementations.
  * <p>
  * It contains a method for analyzing the data from the source.
  * 
@@ -24,6 +24,6 @@ public interface IDataAnalysis {
 	 * 
 	 * @return file - file with analyzed data
 	 */
-	File proceedData();
+	Map<String, Integer> proceedData();
 
 }
