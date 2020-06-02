@@ -3,7 +3,6 @@ package com.hemebiotech.analytics.concreteStrategies;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import com.hemebiotech.analytics.strategies.ISymptomReader;
@@ -61,9 +60,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 					}
 					System.out.println("Analytics application read the source file.");
 
-				} else {
-
-					return Collections.emptyList();
 				}
 
 			} catch (IOException e) {
@@ -71,9 +67,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				e.printStackTrace();
 			}
 
-		} else {
-
-			return Collections.emptyList();
 		}
 
 		return symptoms;
