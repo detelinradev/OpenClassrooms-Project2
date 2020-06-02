@@ -12,9 +12,11 @@ import com.hemebiotech.analytics.contexts.SymptomReader;
 import com.hemebiotech.analytics.contexts.WriteOutput;
 
 /**
- * <h1>AnalyticsCounter</h1> The AnalyticsCounter program implements an
- * application that reads symptoms from a file, one symptom per line, and write
- * it in data structure by given requirements.
+ * <h1>AnalyticsCounter</h1> The AnalyticsCounter class is the base class where
+ * we receive a String with a path to the source data and instantiate the
+ * classes that are part of the application and holds the processing methods
+ * that reads symptoms from a file, one symptom per line, analyze all the data,
+ * and write it in data structure by given requirements.
  * <p>
  *
  * @author Detelin Radev
@@ -22,15 +24,26 @@ import com.hemebiotech.analytics.contexts.WriteOutput;
  */
 public class AnalyticsCounter {
 
+	private String filepath;
+
+	/**
+	 * This constructor stores string with a path to the file with symptoms
+	 * 
+	 * @param filepath a full or partial path to file with symptom strings in it,
+	 *                 one per line
+	 */
+	public AnalyticsCounter(String filepath) {
+		this.filepath = filepath;
+	}
+
 	/**
 	 * This is the main method where we instantiate the classes used for reading,
 	 * processing and writing the data from the source file with the symptoms.
 	 * 
-	 * @param args Unused.
 	 */
-	public static void main(String args[]) {
+	public void analyzeData() {
 
-		SymptomReader reader = new SymptomReader(new ReadSymptomDataFromFile("symptoms.txt"));
+		SymptomReader reader = new SymptomReader(new ReadSymptomDataFromFile(filepath));
 
 		List<String> data = new ArrayList<>(reader.getData());
 
@@ -39,6 +52,8 @@ public class AnalyticsCounter {
 		File result = analysisTool.analyze();
 
 		WriteOutput writeTool = new WriteOutput(new WriteOutputToFile(result));
+
+		writeTool.writeOutput();
 
 	}
 }
