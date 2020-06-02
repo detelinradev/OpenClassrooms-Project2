@@ -42,6 +42,7 @@ public class AnalyticsCounter {
 	 * 
 	 */
 	public void analyzeData() {
+		System.out.println("Analytics application is started!");
 
 		SymptomReader reader = new SymptomReader(new ReadSymptomDataFromFile(filepath));
 
@@ -54,6 +55,8 @@ public class AnalyticsCounter {
 		WriteOutput writeTool = new WriteOutput(new WriteOutputToFile(result));
 
 		writeTool.writeOutput();
+
+		System.out.println("Analytics application is closed!");
 
 	}
 }

@@ -7,10 +7,9 @@ import com.hemebiotech.analytics.strategies.ISymptomReader;
 /**
  * <h1>SymptomReader</h1> The SymptomReader class is the actual class that is
  * used to represent the source data at runtime to the user. This is
- * implementation of the Strategy Pattern, where an instantiable class should be
- * used to represent the interface containing the method that groups several
- * classes implementing the interface and the method with different
- * implementations.
+ * implementation of the Strategy Pattern, where a concrete class should be used
+ * to represent the interface containing the method that groups several classes
+ * implementing the interface and the method with different implementations.
  * <p>
  * It contains a method which make use of the getSymptoms method of the
  * interface ISymptomReader and returns a list with the result.

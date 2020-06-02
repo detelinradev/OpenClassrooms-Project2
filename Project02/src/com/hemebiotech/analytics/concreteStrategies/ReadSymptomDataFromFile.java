@@ -59,6 +59,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 						symptoms.add(line);
 						line = reader.readLine(); // get next symptom
 					}
+					System.out.println("Analytics application read the source file.");
 
 				} else {
 

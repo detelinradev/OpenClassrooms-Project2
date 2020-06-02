@@ -63,6 +63,7 @@ public class GroupSymptomsAndCountOccurrences implements IDataAnalysis {
 					result.put(symptom, 1);
 				}
 			}
+			System.out.println("Analytics application analyzed the data.");
 		}
 
 		return writeOutputToFile(result);

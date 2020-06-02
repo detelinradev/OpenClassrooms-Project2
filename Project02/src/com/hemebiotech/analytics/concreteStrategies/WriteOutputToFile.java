@@ -55,6 +55,7 @@ public class WriteOutputToFile implements IWriteOutput {
 					writer.write(line + "\n");
 					line = reader.readLine(); // get next symptom
 				}
+				System.out.println("Analytics application wrote the proceeded data to a file.");
 
 			} else {
 
