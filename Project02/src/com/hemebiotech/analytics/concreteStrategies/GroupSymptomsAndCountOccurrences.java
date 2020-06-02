@@ -1,8 +1,6 @@
 
 package com.hemebiotech.analytics.concreteStrategies;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -67,32 +65,6 @@ public class GroupSymptomsAndCountOccurrences implements IDataAnalysis {
 		}
 
 		return result;
-	}
-
-	private File writeOutputToFile(Map<String, Integer> result) {
-
-		File output = new File("proceededData.txt");
-
-		try (FileWriter writer = new FileWriter(output)) {
-
-			if (!result.isEmpty()) {
-
-				for (String symptom : result.keySet()) {
-
-					writer.write(symptom + " : " + result.get(symptom) + "\n");
-				}
-
-			} else {
-
-				writer.write("No data proceeded");
-			}
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-
-		return output;
 	}
 
 }
