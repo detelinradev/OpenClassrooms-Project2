@@ -39,7 +39,7 @@ public class GroupSymptomsAndCountOccurrences implements IDataAnalysis {
 	 * 
 	 * @return TreeMap with all the symptoms from the List grouped by the number of
 	 *         occurrences and alphabetically ordered. If the List is empty or null,
-	 *         method returns TreeMap with single record "No data proceeded".
+	 *         method returns empty TreeMap.
 	 * @exception IOException On input error
 	 * @see IOException
 	 */

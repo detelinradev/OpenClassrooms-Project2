@@ -20,9 +20,9 @@ public interface IDataAnalysis {
 
 	/**
 	 * The method analyze the data in various ways depends of the class implementing
-	 * it and writes the result in a file.
+	 * it and writes the result in a map.
 	 * 
-	 * @return file - file with analyzed data
+	 * @return Map - map with analyzed data
 	 */
 	Map<String, Integer> proceedData();
 

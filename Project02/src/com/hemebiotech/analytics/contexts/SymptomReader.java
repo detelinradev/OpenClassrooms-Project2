@@ -12,7 +12,7 @@ import com.hemebiotech.analytics.strategies.ISymptomReader;
  * implementing the interface and the method with different implementations.
  * <p>
  * It contains a method which make use of the getSymptoms method of the
- * interface ISymptomReader and returns a list with the result.
+ * interface ISymptomReader and returns a List with the result.
  * 
  * It holds ISymptomReader variable what is used to create dependency with the
  * method hold in the ISymptomReader interface
@@ -35,7 +35,7 @@ public class SymptomReader {
 
 	/**
 	 * This method make use of the getData method of SymptomReaderFromSource and
-	 * returns a map with the result.
+	 * returns a List with the result.
 	 * 
 	 * @return List<String> with the data read from the source
 	 */

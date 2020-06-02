@@ -8,10 +8,9 @@ import java.io.IOException;
  * between the types of writing data classes that all implements the interface
  * and the actual class that is used to receive the processed data at runtime
  * from the SymptomReader object and write it as an output for the user. This is
- * implementation of the Design Pattern, where an instantiable class should be
- * used to represent the interface containing the method that groups several
- * classes implementing the interface and the method with different
- * implementations.
+ * implementation of the Design Pattern, where a concrete class should be used
+ * to represent the interface containing the method that groups several classes
+ * implementing the interface and the method with different implementations.
  * <p>
  * It contains just one method for writing the data to the output destination.
  * 

@@ -38,8 +38,11 @@ public class AnalyticsCounter {
 	}
 
 	/**
-	 * This is the main method where we instantiate the classes used for reading,
-	 * processing and writing the data from the source file with the symptoms.
+	 * This is the method where we instantiate the classes used for reading,
+	 * processing and writing the data from the source file with the symptoms, as
+	 * well as the data structures used for communication between modules. It
+	 * creates messages to the console with appropriate content for the application
+	 * status.
 	 * 
 	 */
 	public void analyzeData() {

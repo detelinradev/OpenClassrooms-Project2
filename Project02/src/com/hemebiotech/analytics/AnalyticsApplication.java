@@ -12,8 +12,9 @@ package com.hemebiotech.analytics;
 public class AnalyticsApplication {
 
 	/**
-	 * This is the main method where we instantiate the classes used for reading,
-	 * processing and writing the data from the source file with the symptoms.
+	 * This is the main method where we instantiate the AnalyticsCounter class which
+	 * represents all classes used for reading, processing and writing the data from
+	 * the source file with the symptoms.
 	 * 
 	 * @param args Unused.
 	 */
