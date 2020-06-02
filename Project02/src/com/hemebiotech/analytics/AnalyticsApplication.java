@@ -18,7 +18,9 @@ public class AnalyticsApplication {
 	 * @param args Unused.
 	 */
 	public static void main(String[] args) {
-		
+
+		AnalyticsCounter counter = new AnalyticsCounter("symptoms.txt");
+		counter.analyzeData();
 
 	}
 
